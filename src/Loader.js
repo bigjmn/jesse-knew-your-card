@@ -1,9 +1,15 @@
 import { useLocation } from 'react-router-dom'
 import ShownCard from './pages/ShownCard'
 import SetCard from './pages/SetCard'
+import CardRecord from './pages/CardRecord'
 
 const Loader = () => {
   const location = useLocation()
+  if (location.pathname === "/cardset"){
+    return (
+      <CardRecord />
+    )
+  }
 
   const pathParts = location.pathname.split("/")
     .filter(part => part !== '')
